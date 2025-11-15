@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+  <html lang="it">
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>Cheatsheet HTML & CSS</title>
+  </head>
+  <body>
+  <header>
+    <h1>Cheatsheet HTML &amp; CSS – TPSI</h1>
+    <nav>
+      <a href="#struttura">Struttura base</a>
+      <a href="#testo">Testo</a>
+      <a href="#liste">Liste</a>
+      <a href="#link">Link</a>
+      <a href="#immagini">Immagini</a>
+      <a href="#tabelle">Tabelle</a>
+      <a href="#contenitori">Contenitori / layout</a>
+      <a href="#css">CSS base</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="struttura">
+      <h2>Struttura base documento</h2>
+      <table class="cheat-table">
+        <tr>
+          <th>Tag</th>
+          <th>Descrizione</th>
+          <th>Esempio</th>
+        </tr>
+        <tr>
+          <td><code>&lt;!DOCTYPE html&gt;</code></td>
+          <td>Dichiara il tipo di documento (HTML5).</td>
+          <td>
+            <pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;html&gt;</code></td>
+          <td>Radice della pagina HTML.</td>
+          <td>
+          <pre><code>&lt;html lang="it"&gt;
+  ...
+&lt;/html&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;head&gt;</code></td>
+          <td>Metadati, titolo, link a CSS ecc.</td>
+          <td>
+          <pre><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Titolo&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;body&gt;</code></td>
+          <td>Contenuto visibile della pagina.</td>
+          <td>
+          <pre><code>&lt;body&gt;
+  Contenuto...
+&lt;/body&gt;</code></pre>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="testo">
+      <h2>Testo (titoli, paragrafi, enfasi)</h2>
+      <table class="cheat-table">
+        <tr>
+          <th>Tag</th>
+          <th>Descrizione</th>
+          <th>Esempio</th>
+        </tr>
+        <tr>
+          <td><code>&lt;h1&gt;...&lt;/h1&gt; ... &lt;h6&gt;</code></td>
+          <td>6 livelli di titolo (dal più importante al meno importante).</td>
+          <td>
+          <pre><code>&lt;h1&gt;Titolo principale&lt;/h1&gt;
+&lt;h2&gt;Sottotitolo&lt;/h2&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;p&gt;...&lt;/p&gt;</code></td>
+          <td>Paragrafo di testo.</td>
+          <td>
+            <pre><code>&lt;p&gt;Questo è un paragrafo di testo.&lt;/p&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;br&gt;</code></td>
+          <td>A capo forzato all’interno di un paragrafo.</td>
+          <td>
+          <pre><code>Riga 1&lt;br&gt;
+Riga 2</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;strong&gt;...&lt;/strong&gt;</code></td>
+          <td>Testo con forte enfasi (di solito grassetto).</td>
+          <td>
+            <pre><code>&lt;p&gt;&lt;strong&gt;Attenzione:&lt;/strong&gt; testo importante.&lt;/p&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;em&gt;...&lt;/em&gt;</code></td>
+          <td>Enfasi sul testo (di solito corsivo).</td>
+          <td>
+            <pre><code>&lt;p&gt;Io &lt;em&gt;penso&lt;/em&gt; che sia giusto.&lt;/p&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;blockquote&gt;</code></td>
+          <td>Citazione lunga (blocco).</td>
+          <td>
+          <pre><code>&lt;blockquote&gt;
+  &lt;p&gt;Testo della citazione.&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;q&gt;</code></td>
+          <td>Citazione breve in linea.</td>
+          <td>
+            <pre><code>&lt;p&gt;Lui disse: &lt;q&gt;ciao&lt;/q&gt;.&lt;/p&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;abbr&gt;</code></td>
+          <td>Abbreviazioni o acronimi con significato.</td>
+          <td>
+          <pre><code>&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;
+HTML&lt;/abbr&gt; è un linguaggio di markup.&lt;/p&gt;</code></pre>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="liste">
+      <h2>Liste</h2>
+      <table class="cheat-table">
+        <tr>
+          <th>Tag</th>
+          <th>Descrizione</th>
+          <th>Esempio</th>
+        </tr>
+        <tr>
+          <td><code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></td>
+          <td>Lista ordinata (numerata).</td>
+          <td>
+          <pre><code>&lt;ol&gt;
+  &lt;li&gt;Primo passo&lt;/li&gt;
+  &lt;li&gt;Secondo passo&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            <div class="small-note">Attributo: <code>type="1|a|A|i|I"</code></div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code></td>
+          <td>Lista non ordinata (punti).</td>
+          <td>
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;Pane&lt;/li&gt;
+  &lt;li&gt;Latte&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            <div class="small-note">Attributo: <code>type="disc|circle|square"</code></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Liste nidificate</td>
+          <td>Una lista dentro un elemento <code>&lt;li&gt;</code>.</td>
+          <td>
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;Dolci
+    &lt;ul&gt;
+      &lt;li&gt;Croissant&lt;/li&gt;
+      &lt;li&gt;Torta&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code></td>
+          <td>Lista di definizioni (termine + descrizione).</td>
+          <td>
+          <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Linguaggio per strutturare pagine web.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+
+    <section id="link">
+      <h2>Link</h2>
+      <table class="cheat-table">
+        <tr>
+          <th>Tag / Attributo</th>
+          <th>Descrizione</th>
+          <th>Esempio</th>
+        </tr>
+        <tr>
+          <td><code>&lt;a&gt;</code> + <code>href</code></td>
+          <td>Link ipertestuale.</td>
+          <td>
+          <pre><code>&lt;a href="https://www.esempio.com"&gt;
+Vai al sito&lt;/a&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>URL assoluto</td>
+          <td>Puntano a un altro sito.</td>
+          <td>
+            <pre><code>&lt;a href="https://www.miosito.it/pagina.html"&gt;Link&lt;/a&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>URL relativo</td>
+          <td>Pagine dello stesso sito.</td>
+          <td>
+            <pre><code>&lt;a href="contatti.html"&gt;Contatti&lt;/a&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>target="_blank"</code></td>
+          <td>Apre il link in una nuova scheda.</td>
+          <td>
+          <pre><code>&lt;a href="pagina.html" target="_blank"&gt;
+Apri in nuova scheda&lt;/a&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>Link mail / telefono</td>
+          <td>Richiamano client email o chiamata.</td>
+          <td>
+          <pre><code>&lt;a href="mailto:utente@example.com"&gt;
+Mandami una mail&lt;/a&gt;
+
+&lt;a href="tel:3331234567"&gt;Chiama&lt;/a&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>id</code> + link interno</td>
+          <td>Permette di saltare a un punto della stessa pagina.</td>
+          <td>
+          <pre><code>&lt;h1 id="top"&gt;Inizio pagina&lt;/h1&gt;
+...
+&lt;a href="#top"&gt;Torna su&lt;/a&gt;</code></pre>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="immagini">
+      <h2>Immagini</h2>
+      <table class="cheat-table">
+        <tr>
+          <th>Tag</th>
+          <th>Descrizione</th>
+          <th>Esempio</th>
+        </tr>
+        <tr>
+          <td><code>&lt;img&gt;</code></td>
+          <td>Inserisce un’immagine.</td>
+          <td>
+          <pre><code>&lt;img src="img/foto.jpg"
+     alt="Descrizione dell'immagine"&gt;</code></pre>
+            <div class="small-note"><code>alt</code> importante per accessibilità.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Dimensioni</td>
+          <td>Attributi <code>width</code> e <code>height</code> in px o %.</td>
+          <td>
+          <pre><code>&lt;img src="img/foto.jpg"
+     alt="Foto"
+     width="300px" height="200px"&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code></td>
+          <td>Raggruppa immagine e didascalia.</td>
+          <td>
+          <pre><code>&lt;figure&gt;
+  &lt;img src="img/foto.jpg" alt="Descrizione"&gt;
+  &lt;figcaption&gt;Testo didascalia&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="tabelle">
+      <h2>Tabelle</h2>
+      <table class="cheat-table">
+        <tr>
+          <th>Tag</th>
+          <th>Descrizione</th>
+          <th>Esempio</th>
+        </tr>
+        <tr>
+          <td><code>&lt;table&gt;</code></td>
+          <td>Inizia una tabella.</td>
+          <td>
+          <pre><code>&lt;table&gt;
+  ...
+&lt;/table&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;tr&gt;</code></td>
+          <td>Riga della tabella.</td>
+          <td>
+          <pre><code>&lt;tr&gt;
+  &lt;td&gt;A&lt;/td&gt;
+  &lt;td&gt;B&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;td&gt;</code></td>
+          <td>Cella di dati.</td>
+          <td>
+            <pre><code>&lt;td&gt;Valore&lt;/td&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;th&gt;</code></td>
+          <td>Cella di intestazione (titolo riga/colonna).</td>
+          <td>
+            <pre><code>&lt;th scope="col"&gt;Prezzo&lt;/th&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>colspan</code>, <code>rowspan</code></td>
+          <td>Estende la cella su più colonne o righe.</td>
+          <td>
+          <pre><code>&lt;td colspan="2"&gt;Unita due colonne&lt;/td&gt;
+&lt;td rowspan="3"&gt;Unita tre righe&lt;/td&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></td>
+          <td>Sezioni di una tabella grande (intestazione, corpo, piede).</td>
+          <td>
+          <pre><code>&lt;table&gt;
+  &lt;thead&gt;...&lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+  &lt;tfoot&gt;...&lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="contenitori">
+      <h2>Contenitori e layout (HTML5)</h2>
+      <table class="cheat-table">
+        <tr>
+          <th>Tag</th>
+          <th>Uso principale</th>
+          <th>Esempio</th>
+        </tr>
+        <tr>
+          <td><code>&lt;div&gt;</code></td>
+          <td>Contenitore generico a blocco (solo per layout/stile).</td>
+          <td>
+          <pre><code>&lt;div class="box"&gt;
+  &lt;p&gt;Paragrafo dentro il div&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;span&gt;</code></td>
+          <td>Contenitore inline (per stile su una parte di testo).</td>
+          <td>
+            <pre><code>&lt;p&gt;Testo &lt;span class="evidenzia"&gt;importante&lt;/span&gt; qui.&lt;/p&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;header&gt;</code></td>
+          <td>Intestazione della pagina o di una sezione (logo, menu...).</td>
+          <td>
+          <pre><code>&lt;header&gt;
+  &lt;h1&gt;Nome sito&lt;/h1&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;footer&gt;</code></td>
+          <td>Piè di pagina (copyright, contatti...).</td>
+          <td>
+          <pre><code>&lt;footer&gt;
+  &amp;copy; 2025 Azienda
+&lt;/footer&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;nav&gt;</code></td>
+          <td>Sezione di navigazione principale (menu con link).</td>
+          <td>
+          <pre><code>&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contatti.html"&gt;Contatti&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;section&gt;</code></td>
+          <td>Sezione tematica della pagina (blocco con lo stesso tema).</td>
+          <td>
+          <pre><code>&lt;section&gt;
+  &lt;h2&gt;Servizi&lt;/h2&gt;
+  &lt;p&gt;Descrizione servizi...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>&lt;article&gt;</code></td>
+          <td>Contenuto indipendente e riutilizzabile (articolo, post, scheda...).</td>
+          <td>
+          <pre><code>&lt;article&gt;
+  &lt;h2&gt;Titolo articolo&lt;/h2&gt;
+  &lt;p&gt;Testo...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+          </td>
+        </tr>
+      </table>
+    </section>
+
+
+    <section id="css">
+      <h2>CSS base (selettori e proprietà principali)</h2>
+      <table class="cheat-table">
+        <tr>
+          <th>Concetto</th>
+          <th>Descrizione</th>
+          <th>Esempio</th>
+        </tr>
+        <tr>
+          <td>Selettore di tipo</td>
+          <td>Seleziona tutti gli elementi con quel tag.</td>
+          <td>
+          <pre><code>p {
+  color: blue;
+}</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>.classe</code></td>
+          <td>Selettore di classe (attributo <code>class</code>).</td>
+          <td>
+          <pre><code>&lt;p class="evidenzia"&gt;Testo&lt;/p&gt;
+
+.evidenzia {
+  background-color: yellow;
+}</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>#id</code></td>
+          <td>Selettore di id (univoco nella pagina).</td>
+          <td>
+          <pre><code>&lt;h1 id="titolo"&gt;Ciao&lt;/h1&gt;
+
+#titolo {
+  text-align: center;
+}</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>Stile inline</td>
+          <td>CSS direttamente sul tag (da usare poco).</td>
+          <td>
+          <pre><code>&lt;p style="color:red; font-size:20px;"&gt;
+Testo rosso&lt;/p&gt;</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td>Proprietà utili</td>
+          <td>Base per impaginare.</td>
+          <td>
+          <pre><code>color: red;              /* colore testo */
+background-color: #eee; /* sfondo */
+font-size: 16px;        /* grandezza testo */
+margin: 10px;           /* spazio esterno */
+padding: 10px;          /* spazio interno */
+border: 1px solid #000; /* bordo */
+text-align: center;     /* allineamento testo */</code></pre>
+          </td>
+        </tr>
+        <tr>
+          <td><code>overflow-x: attributo;</code></td>
+          <td>Se il contenuto è più largo della box, mostra una scrollbar orizzontale.</td>
+          <td>
+            <pre><code>pre {
+overflow-x: auto;
+}</code></pre>
+            <div class="small-note">Attributo: <code>auto (quando serve) | scroll (sempre)</code></div>
+          </td>
+        </tr>
+        <tr>
+          <td><code>white-space: attributo;</code></td>
+          <td>Se il contenuto è più largo della box, mostra una scrollbar orizzontale.</td>
+          <td>
+            <pre><code>pre {
+overflow-x: auto;
+}</code></pre>
+            <div class="small-note">Attributo: <code>auto (quando serve) | scroll (sempre)</code></div>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    Cheatsheet HTML &amp; CSS per TPSI
+  </footer>
+  </body>
+  </html>
