@@ -17,36 +17,6 @@ header {
   position: sticky;
 }
 
-#boxmodel {
-  margin-top: .5rem;
-}
-
-.box {
-  padding: 20px;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 20px;
-  color: white;
-}
-
-.margin {
-  background: #c8d9e6;
-}
-
-.border {
-  background: #5286ae;
-}
-
-.padding {
-  background: #9bb8d0;
-}
-
-.content {
-  background: white;
-  color: #333;
-  padding: 40px;
-}
-
 header h1 {
   margin: 0 0 .5rem 0;
   font-size: 1.4rem;
@@ -111,6 +81,36 @@ section h2 {
   font-weight: 600;
   text-align: left;
   white-space: nowrap;
+}
+
+#boxmodel {
+  margin-top: .5rem;
+}
+
+.box {
+  padding: 20px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.margin {
+  background: #c8d9e6;
+}
+
+.border {
+  background: #5286ae;
+}
+
+.padding {
+  background: #9bb8d0;
+}
+
+.content {
+  background: white;
+  color: #333;
+  padding: 40px;
 }
 
 code {
